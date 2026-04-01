@@ -1,0 +1,47 @@
+.app-layout {
+  min-height: 100vh;
+}
+
+.app-layout__sider {
+  box-shadow: 2px 0 8px rgb(0 0 0 / 6%);
+}
+
+.app-layout__logo {
+  height: 64px;
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+  line-height: 64px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.app-layout__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.app-layout__title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.app-layout__content {
+  margin: 16px;
+}
+
+.app-layout__breadcrumb {
+  margin-bottom: 16px;
+}
+
+.app-layout__content-body {
+  padding: 16px;
+  min-height: calc(100vh - 64px - 32px - 38px);
+  background: #fff;
+  border-radius: 8px;
+}

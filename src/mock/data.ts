@@ -1,0 +1,191 @@
+import type { DashboardStat, Device, OtaPlan, Permission, Role, User } from '../types/models'
+
+export const dashboards: DashboardStat[] = [
+  { id: 'users', title: '用户总数', value: 1860, suffix: '人' },
+  { id: 'online', title: '在线设备', value: 1236, suffix: '台' },
+  { id: 'offline', title: '离线设备', value: 97, suffix: '台' },
+  { id: 'ota', title: '进行中 OTA', value: 4, suffix: '项' },
+]
+
+export const permissions: Permission[] = [
+  {
+    id: 'p-1',
+    name: '查看仪表盘',
+    code: 'dashboard:view',
+    resource: 'dashboard',
+    action: 'view',
+    description: '查看全局统计与监控信息',
+  },
+  {
+    id: 'p-2',
+    name: '用户管理',
+    code: 'user:manage',
+    resource: 'user',
+    action: 'manage',
+    description: '查看、编辑用户信息',
+  },
+  {
+    id: 'p-3',
+    name: '角色管理',
+    code: 'role:manage',
+    resource: 'role',
+    action: 'manage',
+    description: '管理角色及其权限关系',
+  },
+  {
+    id: 'p-4',
+    name: '权限管理',
+    code: 'permission:manage',
+    resource: 'permission',
+    action: 'manage',
+    description: '维护权限点定义',
+  },
+  {
+    id: 'p-5',
+    name: '设备管理',
+    code: 'device:manage',
+    resource: 'device',
+    action: 'manage',
+    description: '维护设备档案与状态',
+  },
+  {
+    id: 'p-6',
+    name: 'OTA 管理',
+    code: 'ota:manage',
+    resource: 'ota',
+    action: 'manage',
+    description: '创建与发布 OTA 任务',
+  },
+]
+
+export const roles: Role[] = [
+  {
+    id: 'r-1',
+    name: '超级管理员',
+    description: '拥有所有模块管理权限',
+    permissionIds: permissions.map((permission) => permission.id),
+    memberCount: 3,
+  },
+  {
+    id: 'r-2',
+    name: '运维工程师',
+    description: '管理设备与 OTA，查看用户',
+    permissionIds: ['p-1', 'p-2', 'p-5', 'p-6'],
+    memberCount: 8,
+  },
+  {
+    id: 'r-3',
+    name: '审计人员',
+    description: '只读查看关键数据',
+    permissionIds: ['p-1', 'p-2'],
+    memberCount: 4,
+  },
+]
+
+export const users: User[] = [
+  {
+    id: 'u-1001',
+    name: '张晨',
+    email: 'zhang.chen@example.com',
+    phone: '+86-13900000001',
+    status: 'active',
+    roleId: 'r-1',
+    createdAt: '2026-02-10 09:12:18',
+    lastLoginAt: '2026-03-31 17:06:11',
+  },
+  {
+    id: 'u-1002',
+    name: '李维',
+    email: 'li.wei@example.com',
+    phone: '+86-13900000002',
+    status: 'active',
+    roleId: 'r-2',
+    createdAt: '2026-01-18 14:30:22',
+    lastLoginAt: '2026-04-01 08:10:45',
+  },
+  {
+    id: 'u-1003',
+    name: '王瑶',
+    email: 'wang.yao@example.com',
+    phone: '+86-13900000003',
+    status: 'disabled',
+    roleId: 'r-3',
+    createdAt: '2026-02-28 11:08:09',
+    lastLoginAt: '2026-03-22 19:44:03',
+  },
+]
+
+export const devices: Device[] = [
+  {
+    id: 'd-9001',
+    name: 'Gateway A01',
+    serialNumber: 'GW-A01-202603',
+    model: 'AGW-100',
+    status: 'online',
+    firmwareVersion: '1.2.8',
+    ownerUserId: 'u-1002',
+    location: '上海数据中心',
+    lastSeenAt: '2026-04-01 09:21:13',
+  },
+  {
+    id: 'd-9002',
+    name: 'Gateway A02',
+    serialNumber: 'GW-A02-202603',
+    model: 'AGW-100',
+    status: 'offline',
+    firmwareVersion: '1.2.7',
+    ownerUserId: 'u-1002',
+    location: '北京工厂',
+    lastSeenAt: '2026-03-29 22:11:59',
+  },
+  {
+    id: 'd-9003',
+    name: 'EdgeBox B11',
+    serialNumber: 'EB-B11-202602',
+    model: 'EDG-400',
+    status: 'warning',
+    firmwareVersion: '2.0.3',
+    ownerUserId: 'u-1001',
+    location: '深圳办公室',
+    lastSeenAt: '2026-04-01 10:01:41',
+  },
+]
+
+export const otaTasks: OtaPlan[] = [
+  {
+    id: 'ota-2001',
+    name: 'AGW-100 三月补丁',
+    targetVersion: '1.2.9',
+    channel: 'gray',
+    status: 'publishing',
+    targetDeviceCount: 320,
+    successRate: 90,
+    releaseNote: '修复连接稳定性问题并优化日志上报。',
+    operatorUserId: 'u-1001',
+    createdAt: '2026-03-31 09:00:00',
+  },
+  {
+    id: 'ota-2002',
+    name: 'EDG-400 稳定版升级',
+    targetVersion: '2.1.0',
+    channel: 'stable',
+    status: 'finished',
+    targetDeviceCount: 128,
+    successRate: 100,
+    releaseNote: '升级内核并增强边缘计算性能。',
+    operatorUserId: 'u-1002',
+    createdAt: '2026-03-20 14:25:00',
+  },
+  {
+    id: 'ota-2003',
+    name: 'Legacy 紧急修复',
+    targetVersion: '1.0.8',
+    channel: 'gray',
+    status: 'draft',
+    targetDeviceCount: 67,
+    successRate: 0,
+    releaseNote: '计划中的紧急热修，待审批。',
+    operatorUserId: 'u-1001',
+    createdAt: '2026-03-18 06:40:00',
+  },
+]
