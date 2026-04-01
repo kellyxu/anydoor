@@ -9,7 +9,7 @@ export class AppStore {
   permissions: Permission[] = permissions
   devices: Device[] = devices
   otaPlans: OtaPlan[] = otaTasks
-  currentUserId: string | null = localStorage.getItem('iot-admin-current-user')
+  currentUserId: string | null = localStorage.getItem('tongyu-admin-current-user')
 
   constructor() {
     makeAutoObservable(this)
@@ -86,13 +86,13 @@ export class AppStore {
       return false
     }
     this.currentUserId = matchedUser.id
-    localStorage.setItem('iot-admin-current-user', matchedUser.id)
+    localStorage.setItem('tongyu-admin-current-user', matchedUser.id)
     return true
   }
 
   logout() {
     this.currentUserId = null
-    localStorage.removeItem('iot-admin-current-user')
+    localStorage.removeItem('tongyu-admin-current-user')
   }
 }
 

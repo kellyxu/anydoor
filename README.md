@@ -1,4 +1,4 @@
-# IoT Admin 前端项目（React + TS + MobX + Ant Design）
+# 瞳宇后台管理系统（React + TS + MobX + Ant Design）
 
 基于 Vite 构建的后台管理系统骨架，已覆盖以下模块：
 

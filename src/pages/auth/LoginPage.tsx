@@ -30,7 +30,7 @@ export const LoginPage = observer(() => {
         <Space direction="vertical" size={20} style={{ width: '100%' }}>
           <div>
             <Typography.Title level={3} style={{ marginBottom: 8 }}>
-              IoT Admin 登录
+              瞳宇后台管理系统登录
             </Typography.Title>
             <Typography.Text type="secondary">
               示例账号：zhang.chen@example.com / li.wei@example.com，密码：123456

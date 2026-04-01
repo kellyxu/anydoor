@@ -100,7 +100,7 @@ export function AppLayout() {
   return (
     <Layout className="app-layout">
       <Sider width={240} breakpoint="lg" collapsedWidth={80} theme="dark" className="app-layout__sider">
-        <div className="app-layout__logo">IoT Admin</div>
+        <div className="app-layout__logo">瞳宇后台管理系统</div>
         <Menu
           theme="dark"
           mode="inline"
@@ -112,7 +112,7 @@ export function AppLayout() {
       <Layout>
         <Header className="app-layout__header">
           <Title level={4} className="app-layout__title">
-            设备管理后台
+            瞳宇后台管理系统
           </Title>
           <Dropdown
             menu={{
