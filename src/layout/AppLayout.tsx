@@ -2,15 +2,17 @@ import {
   DashboardOutlined,
   DeploymentUnitOutlined,
   LockOutlined,
+  LogoutOutlined,
   SettingOutlined,
   TeamOutlined,
   UserOutlined,
 } from '@ant-design/icons'
-import { Breadcrumb, Layout, Menu, Typography } from 'antd'
+import { Breadcrumb, Button, Dropdown, Layout, Menu, Typography } from 'antd'
 import type { MenuProps } from 'antd'
 import { useMemo } from 'react'
 import type { ReactNode } from 'react'
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { useAppStore } from '../hooks/useAppStore'
 import './AppLayout.css'
 
 const { Header, Sider, Content } = Layout
@@ -63,6 +65,7 @@ const menuTitleMap: Record<string, string> = {
 export function AppLayout() {
   const navigate = useNavigate()
   const location = useLocation()
+  const { currentUser, logout } = useAppStore()
 
   const selectedKey = useMemo(() => {
     const path = location.pathname
@@ -111,6 +114,18 @@ export function AppLayout() {
           <Title level={4} className="app-layout__title">
             设备管理后台
           </Title>
+          <Dropdown
+            menu={{
+              items: [{ key: 'logout', label: '退出登录', icon: <LogoutOutlined /> }],
+              onClick: () => {
+                logout()
+                navigate('/login', { replace: true })
+              },
+            }}
+            placement="bottomRight"
+          >
+            <Button type="text">{currentUser?.name ?? '当前用户'}</Button>
+          </Dropdown>
         </Header>
         <Content className="app-layout__content">
           <Breadcrumb items={breadcrumbItems} className="app-layout__breadcrumb" />

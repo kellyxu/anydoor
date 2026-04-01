@@ -9,9 +9,21 @@ export class AppStore {
   permissions: Permission[] = permissions
   devices: Device[] = devices
   otaPlans: OtaPlan[] = otaTasks
+  currentUserId: string | null = localStorage.getItem('iot-admin-current-user')
 
   constructor() {
     makeAutoObservable(this)
+  }
+
+  get currentUser() {
+    if (!this.currentUserId) {
+      return undefined
+    }
+    return this.users.find((user) => user.id === this.currentUserId)
+  }
+
+  get isAuthenticated() {
+    return Boolean(this.currentUser)
   }
 
   get roleMap() {
@@ -64,6 +76,23 @@ export class AppStore {
 
   getOtaByOperatorId(userId: string) {
     return this.otaPlans.filter((task) => task.operatorUserId === userId)
+  }
+
+  login(username: string, password: string) {
+    const matchedUser = this.users.find(
+      (user) => user.email.toLowerCase() === username.toLowerCase() && user.status === 'active',
+    )
+    if (!matchedUser || password !== '123456') {
+      return false
+    }
+    this.currentUserId = matchedUser.id
+    localStorage.setItem('iot-admin-current-user', matchedUser.id)
+    return true
+  }
+
+  logout() {
+    this.currentUserId = null
+    localStorage.removeItem('iot-admin-current-user')
   }
 }
 

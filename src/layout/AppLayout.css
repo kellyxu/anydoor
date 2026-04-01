@@ -31,6 +31,10 @@
   font-size: 18px;
 }
 
+.app-layout__user-btn {
+  padding: 0 8px;
+}
+
 .app-layout__content {
   margin: 16px;
 }
