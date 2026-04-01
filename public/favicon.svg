@@ -1,11 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="瞳宇">
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="AI眼镜">
   <defs>
-    <linearGradient id="g" x1="20" x2="108" y1="20" y2="108" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#1677ff" />
+    <linearGradient id="bg" x1="18" y1="16" x2="110" y2="112" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1d39c4" />
       <stop offset="1" stop-color="#13c2c2" />
     </linearGradient>
+    <linearGradient id="lens" x1="30" y1="54" x2="98" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#91caff" />
+      <stop offset="1" stop-color="#69e0ff" />
+    </linearGradient>
   </defs>
-  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#g)" />
-  <path fill="#fff" d="M64 32c20.8 0 39.1 11.9 48.2 30.2a3.8 3.8 0 0 1 0 3.5C103 84 84.8 96 64 96S24.9 84 15.8 65.7a3.8 3.8 0 0 1 0-3.5A53.4 53.4 0 0 1 64 32Zm0 12.5A21.5 21.5 0 1 0 64 87a21.5 21.5 0 0 0 0-43Zm0 9.7a11.8 11.8 0 1 1 0 23.6 11.8 11.8 0 0 1 0-23.6Z"/>
-  <circle cx="71" cy="58" r="4" fill="#fff" opacity=".92" />
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#bg)" />
+  <rect x="22" y="48" width="84" height="34" rx="17" fill="#ffffff" opacity="0.14" />
+  <rect x="26" y="52" width="34" height="26" rx="12" fill="url(#lens)" opacity="0.92" />
+  <rect x="68" y="52" width="34" height="26" rx="12" fill="url(#lens)" opacity="0.92" />
+  <rect x="58" y="60" width="12" height="10" rx="5" fill="#d6f4ff" />
+  <path d="M26 65h-8M110 65h-8" stroke="#d6f4ff" stroke-width="4" stroke-linecap="round" />
+  <circle cx="42" cy="65" r="4.5" fill="#ffffff" opacity="0.9" />
+  <circle cx="84" cy="65" r="4.5" fill="#ffffff" opacity="0.9" />
+  <path d="M46 90c4.9 3.2 11.1 5 18 5s13.1-1.8 18-5" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.92" />
+  <text x="64" y="40" text-anchor="middle" fill="#ffffff" font-size="12" font-family="Arial, sans-serif" font-weight="700">AI</text>
 </svg>

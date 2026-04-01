@@ -20,10 +20,9 @@
   letter-spacing: 0.3px;
 }
 
-.app-layout__logo-img {
+.app-layout__logo-image {
   width: 28px;
   height: 28px;
-  border-radius: 6px;
   flex-shrink: 0;
 }
 
