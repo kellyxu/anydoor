@@ -9,12 +9,28 @@
 .app-layout__logo {
   height: 64px;
   margin: 0;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   color: #fff;
-  font-size: 18px;
-  line-height: 64px;
-  text-align: center;
+  font-size: 16px;
+  line-height: 1.2;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
+}
+
+.app-layout__logo-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.app-layout__logo-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .app-layout__header {

@@ -10,3 +10,15 @@
   width: 100%;
   max-width: 420px;
 }
+
+.login-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.login-brand__logo {
+  width: 36px;
+  height: 36px;
+}

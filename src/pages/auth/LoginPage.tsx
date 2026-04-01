@@ -29,6 +29,7 @@ export const LoginPage = observer(() => {
       <Card className="login-card">
         <Space direction="vertical" size={20} style={{ width: '100%' }}>
           <div>
+            <img className="login-logo" src="/tongyu-logo.svg" alt="瞳宇后台管理系统" />
             <Typography.Title level={3} style={{ marginBottom: 8 }}>
               瞳宇后台管理系统登录
             </Typography.Title>

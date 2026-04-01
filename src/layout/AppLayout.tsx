@@ -100,7 +100,10 @@ export function AppLayout() {
   return (
     <Layout className="app-layout">
       <Sider width={240} breakpoint="lg" collapsedWidth={80} theme="dark" className="app-layout__sider">
-        <div className="app-layout__logo">瞳宇后台管理系统</div>
+        <div className="app-layout__logo">
+          <img src="/tongyu-logo.svg" alt="瞳宇" className="app-layout__logo-image" />
+          <span className="app-layout__logo-text">瞳宇后台管理系统</span>
+        </div>
         <Menu
           theme="dark"
           mode="inline"
