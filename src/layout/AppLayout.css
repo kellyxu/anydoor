@@ -1,0 +1,66 @@
+.app-layout {
+  min-height: 100vh;
+}
+
+.app-layout__sider {
+  box-shadow: 2px 0 8px rgb(0 0 0 / 6%);
+}
+
+.app-layout__logo {
+  height: 64px;
+  margin: 0;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.app-layout__logo-image {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.app-layout__logo-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.app-layout__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.app-layout__title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.app-layout__user-btn {
+  padding: 0 8px;
+}
+
+.app-layout__content {
+  margin: 16px;
+}
+
+.app-layout__breadcrumb {
+  margin-bottom: 16px;
+}
+
+.app-layout__content-body {
+  padding: 16px;
+  min-height: calc(100vh - 64px - 32px - 38px);
+  background: #fff;
+  border-radius: 8px;
+}

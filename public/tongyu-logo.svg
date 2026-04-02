@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="瞳宇 AI 眼镜">
+  <defs>
+    <linearGradient id="ai-glass-bg" x1="16" y1="16" x2="112" y2="112" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1677FF" />
+      <stop offset="1" stop-color="#13C2C2" />
+    </linearGradient>
+    <linearGradient id="ai-lens" x1="30" y1="42" x2="98" y2="86" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E6F4FF" />
+      <stop offset="1" stop-color="#BAE0FF" />
+    </linearGradient>
+  </defs>
+
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#ai-glass-bg)" />
+
+  <rect x="24" y="44" width="34" height="24" rx="9" fill="url(#ai-lens)" />
+  <rect x="70" y="44" width="34" height="24" rx="9" fill="url(#ai-lens)" />
+  <rect x="58" y="52" width="12" height="8" rx="4" fill="#E6F4FF" />
+
+  <rect x="20" y="50" width="6" height="12" rx="3" fill="#E6F4FF" />
+  <rect x="102" y="50" width="6" height="12" rx="3" fill="#E6F4FF" />
+
+  <circle cx="41" cy="56" r="5" fill="#1677FF" opacity="0.85" />
+  <circle cx="87" cy="56" r="5" fill="#1677FF" opacity="0.85" />
+  <circle cx="43" cy="54" r="1.6" fill="#FFFFFF" />
+  <circle cx="89" cy="54" r="1.6" fill="#FFFFFF" />
+
+  <path d="M64 30v8M50 33l3 6M78 33l-3 6" stroke="#E6F4FF" stroke-width="3" stroke-linecap="round" />
+  <circle cx="64" cy="24" r="4" fill="#E6F4FF" />
+</svg>
